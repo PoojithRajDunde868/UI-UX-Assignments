@@ -1,0 +1,124 @@
+*{
+    background-color: peachpuff;
+}
+
+#container{
+    padding: 20pt;
+    width:200pt;
+
+}
+.highlight{
+    background-color:red;
+}
+
+h1,h2,.title{
+    font-weight:1000;
+}
+
+section p{
+    color: blue;
+}
+input[type="text"]{
+    color: aqua;
+}
+a[href^="https"]
+{
+    text-decoration:underline;
+}
+.skill:hover{
+    background-color: olive;
+    color:azure;
+}
+
+input:focus{
+    outline-color: salmon;
+}
+button:focus{
+    color:rgb(205, 245, 255);
+}
+
+ul li:first-child{
+    font-style: italic;
+}
+
+.about::first-line{
+    background-color: rgb(62, 88, 88);
+}
+
+.name:first-letter{
+    font-size:larger;
+}
+
+body{
+    font-size: x-large;
+}
+
+h1,h2{
+    font-size:xx-large;
+    text-align: center;
+}
+
+.name{
+    text-transform: uppercase;
+}
+.title{
+    font-style:italic;
+}
+
+.skill{
+    font-weight: bold;
+}
+
+p{
+    line-height: 1.6;
+}
+
+.about{
+    letter-spacing: 1px;
+}
+
+body{
+    word-spacing: 3px;
+}
+
+h1{
+    text-shadow: 10px rgb(0, 255, 195);
+}
+h2{
+    text-decoration: underline;
+}
+
+.about{
+    background:#f5f5f5;
+}
+.skill{
+    color:rgb(0,123,255);
+}
+
+.copyright{
+    background-color: rgba(122, 156, 123, 0.5);
+}
+
+h1,h2{
+    color:hsl(101%,120%,10%);
+}
+
+p{
+    color:navy;
+}
+
+#box1{
+    background-color:aquamarine;
+}
+
+.name{
+    color:chartreuse;
+}
+
+#container .name{
+    color:rgb(59, 45, 72);
+}
+
+button{
+    background-color:rgb(209, 108, 177) !important;
+}
