@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magazine Grid Layout</title>
+  <style>
+    /* Reset and base styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial,sans-serif;
+      background-color: whitesmoke;
+      padding: 20px;
+    }
+
+    /* Grid container layout */
+    .container {
+     display: grid; /* Enables CSS Grid layout */
+     gap: 10px;      /* Adds space between grid items */
+
+      /* Grid areas to map sections by name */
+      grid-template-areas:
+        "header header"
+        "main main"
+        "a1 a2"
+        "a3 sidebar"
+        "footer footer";
+
+      /* Two-column layout using fractional units */
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Header spans both columns */
+     header {
+      grid-area: header;
+      background-color: #1e90ff;
+      color: white;
+      padding: 20px;
+      font-size: 65px;
+      font-weight: bold;
+      height: 202px;
+      /* place-items: center;
+      display: grid; */
+    }
+
+    /* Main article spans both columns */
+     .main-article {
+      grid-area: main;
+      background-color: #ffe4b5;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px solid #ffa500;
+      /* place-items: center;
+      display:grid; */
+    }
+
+    /* Articles with shared styling */
+    /* .article {
+      background-color: white;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+
+    .article1 { grid-area: a1; }
+    .article2 { grid-area: a2; }
+    .article3 { grid-area: a3; } */
+
+    /* Sidebar on the right in wide layout */
+    /* .sidebar {
+      grid-area: sidebar;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-left: 4px solid #999;
+    } */
+
+    /* Footer spans both columns */
+    /* footer {
+      grid-area: footer;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    /* Responsive behavior for small screens */
+    /* @media (max-width: 768px) {
+      .container {
+        /* Stack all items vertically */
+        /* grid-template-areas:
+          "header"
+          "main"
+          "a1"
+          "a2"
+          "a3" */
+          /* "sidebar"
+          "footer"; */
+        /* Single column layout */
+        /* grid-template-columns: 1fr;
+      }
+    } */
+
+    /* Bonus: Dynamic grid article layout (optional experimentation) */
+    /* .auto-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    } */
+
+    /* .auto-grid div {
+      background: #e0f7fa;
+      padding: 20px;
+      border: 1px dashed #00796b;
+      text-align: center;
+    } */
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>📰 News Today</header>
+
+    <article class="main-article">
+      🌟 Main Headline Article — Major Update Shakes the Industry!
+    </article>
+
+    <article class="article article1">
+      📄 Article 1: Local News Highlights
+    </article>
+
+    <article class="article article2">
+      📄 Article 2: Technology & Trends
+    </article>
+
+    <article class="article article3">
+      📄 Article 3: Global Economy Outlook
+    </article>
+
+    <aside class="sidebar">
+      📌 Sidebar: Quick Links, Categories, Ads, etc.
+    </aside>
+
+    <footer>
+      © 2025 NewsGrid Magazine • All Rights Reserved
+    </footer>
+  </div>
+
+  <!-- Bonus: Dynamic grid using auto-fit and minmax() for experimentation -->
+  <h2 style="margin-top: 60px;"> Experiment: Auto-Fitting Grid</h2>
+  <div class="auto-grid">
+    <div>Extra Box 1</div>
+    <div>Extra Box 2</div>
+    <div>Extra Box 3</div>
+    <div>Extra Box 4</div>
+    <div>Extra Box 5</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <style>
+        body{
+            margin:2px;
+            padding:3px;
+            background-color: aquamarine;
+        }
+        img{
+            width:250px;
+            place-content: center;
+        }
+        .header{
+            display:grid;
+            color:rgb(68, 59, 77);
+            padding: 20px;
+            place-items: center;
+            text-align: justify;
+            grid-template-areas: main;
+
+        }
+        .sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+      gap: 20px;
+    }
+
+        .section{
+            display:grid;
+            padding: 2px;
+            border:8px solid blueviolet;
+            color:rgb(56, 27, 45);
+            gap: px;
+            h2{
+                color:rgb(186, 19, 19);
+                margin:px;
+                border: 5px solid black;
+            }
+            font-size: 20px;
+            place-items:center;
+            width: 300px;
+            margin-top: 0;
+        }
+    @media (max-width: 768px) {
+      .sections {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <header>
+        <h1>Poojith Raj Dunde</h1>
+    </header>
+    <br>
+    <img src="https://img.freepik.com/premium-photo/happy-man-ai-generated-portrait-user-profile_1119669-1.jpg" alt="My Profile photo">
+    <h3>Full Stack Developer with over 10 years of experience building scalable web applications and enterprise solutions. Skilled in both frontend and backend technologies, with a passion for clean code, performance optimization, and end-to-end software delivery. Adept at collaborating across teams, driving innovation, and delivering user-centric solutions in fast-paced environments.</h3>
+    </div>
+    <br>
+    <br>
+    <div class="sections">
+        <div class="section">
+            <h2>Skills</h2>
+            <p> Languages & Frameworks:
+Java, Spring Boot, Spring MVC, JPA/Hibernate
+
+JavaScript, TypeScript, Node.js, Express.js
+
+</p>
+        </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <p>Healthcare Claims Portal (Optum)
+Tech Stack: Java, Spring Boot, React, PostgreSQL
+Developed secure modules for patient claims tracking and billing systems integrated with insurance APIs and HIPAA-compliant services.</p>
+
+<p>Telecom Service Dashboard (Verizon)
+Tech Stack: React, Redux, Node.js, Spring Boot, Oracle
+Built real-time dashboards for tracking user data usage, billing, and service upgrades with role-based access and notification systems.</p>
+        </div>
+        <div class="section">
+            <h2>Contact</h2>
+        <p>Email: your.email@example.com</p>
+      <p>LinkedIn: linkedin.com/in/yourprofile</p>
+      <p>GitHub: github.com/yourprofile</p>
+
+        </div>
+    </div>
+</body>
+</html>
