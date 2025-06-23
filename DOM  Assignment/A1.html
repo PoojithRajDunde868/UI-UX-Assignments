@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <h2>Test Key Events</h2> 
+   
+  <input type="text" placeholder="Type here" onkeydown="alert('Key down triggered')" /> 
+   
+  <input type="text" placeholder="Type again" onkeydown="alert('Key down triggered')"/> 
+   
+  <input type="text" placeholder="Type a character" onkeydown="alert('Key down triggered')" />
+</body>
+</html>
+
+<!DOCTYPE html> 
+<html> 
+<head><title>Event Practice</title></head> 
+<body> 
+  <h2>Select a Fruit</h2> 
+ 
+  <select onchange="alert ('You selected a fruit!')"> 
+    <option value="">-- Select --</option> 
+    <option value="apple">Apple</option> 
+    <option value="banana">Banana</option> 
+    <option value="mango">Mango</option> 
+  </select> 
+ 
+  <br /><br />
+  <button onclick="alert ('Button Clicked!')">Click Me</button> 
+</body> 
+</html>
+
+
+ <!DOCTYPE html> 
+<html> 
+<head><title>Submit Event</title></head> 
+<body> 
+<h2>Submit the Form</h2> 
+<form onsubmit="alert('Form submitted'); return false;"> 
+<label>Enter your name:</label> 
+<input type="text" name="name" /> 
+<button type="submit">Submit</button> 
+</form> 
+</body>
+</html>

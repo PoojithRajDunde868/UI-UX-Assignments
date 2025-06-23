@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Events Practice</title>
+  <style>
+    .colorBox {
+      width: 100px;
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+      text-align: center;
+      color: white;
+    }
+    #focusInput:focus {
+      border: 2px solid blue;
+    }
+    #dropArea {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px dashed #999;
+      min-height: 50px;
+    }
+  </style>
+</head>
+<body>
+
+    <h1 id="main-title">Welcome!</h1>
+  <p class="desc">This is a description.</p>
+  <input type="text" id="nameInput" value="Student">
+  <button id="changeBtn">Change Text</button>
+
+  <hr>
+
+
+  <div class="colorBox">Red</div>
+  <div class="colorBox">Green</div>
+  <div class="colorBox">Blue</div>
+
+  <hr>
+
+  <input type="text" id="focusInput">
+  <button id="focusBtn">Focus Input</button>
+
+  <hr>
+
+  <button id="clickMe">Click Me</button>
+
+  <hr>
+
+  <div id="dragTarget" draggable="true" style="background: orange; width: 100px; padding: 10px;">Drag me</div>
+  <div id="dropArea">Drop here</div>
+
+  <script>
+    document.getElementById("changeBtn").addEventListener("click", function() {
+      document.getElementById("main-title").innerText = "Hello DOM!";
+      document.querySelector(".desc").innerText = "You've updated the description.";
+      document.getElementById("nameInput").value = "Poojith Raj Dunde";
+    });
+
+   
+    let boxes = document.getElementsByClassName("colorBox");
+    for (let box of boxes) {
+      box.style.backgroundColor = box.innerText.toLowerCase();
+    }
+
+    document.querySelectorAll(".colorBox").forEach(el => {
+      el.style.border = "2px solid black";
+    });
+ 
+    document.getElementById("focusBtn").addEventListener("click", () => {
+      document.getElementById("focusInput").focus();
+    });
+
+ 
+    document.getElementById("clickMe").onclick = () => {
+      alert("Button clicked!");
+    };
+
+     
+    const dragTarget = document.getElementById("dragTarget");
+    const dropArea = document.getElementById("dropArea");
+
+    dragTarget.ondragstart = function(e) {
+      e.dataTransfer.setData("text", e.target.id);
+    };
+
+    dropArea.ondragover = function(e) {
+      e.preventDefault();
+    };
+
+    dropArea.ondrop = function(e) {
+      e.preventDefault();
+      const data = e.dataTransfer.getData("text");
+      const draggedElement = document.getElementById(data);
+      dropArea.appendChild(draggedElement);
+      dropArea.innerText = "Dropped!";
+    };
+  </script>
+</body>
+</html>
