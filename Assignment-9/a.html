@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 2000px; /* To allow scrolling */
+      padding: 50px;
+    }
+
+    h2 {
+      margin-top: 100px;
+    }
+
+    .box {
+      width: 200px;
+      height: 80px;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      line-height: 60px;
+      margin-bottom: 30px;
+    }
+
+    /* 1. Static */
+    .static-box {
+      position: static;
+      background: gray;
+    }
+
+    /* 2. Relative */
+    .relative-box {
+      position: relative;
+      top: 20px;
+      left: 30px;
+      background: teal;
+    }
+
+    /* 3. Absolute */
+    .absolute-parent {
+      position: relative;
+      height: 150px;
+      background: #f0f0f0;
+      margin-bottom: 30px;
+    }
+
+    .absolute-box {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 160px;
+      height: 60px;
+      background: crimson;
+      line-height: 60px;
+    }
+
+    /* 4. Fixed */
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      height: 60px;
+      background: green;
+      line-height: 60px;
+      z-index: 999;
+    }
+
+    /* 5. Sticky */
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background: orange;
+      height: 60px;
+      line-height: 60px;
+      z-index: 10;
+    }
+
+    .spacer {
+      height: 1000px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>CSS Position Property Demo</h1>
+
+  <h2>1. Static (default)</h2>
+  <div class="box static-box">Static Box</div>
+
+  <h2>2. Relative</h2>
+  <div class="box relative-box">Relative Box</div>
+
+  <h2>3. Absolute</h2>
+  <div class="absolute-parent">
+    <div class="box absolute-box">Absolute Box</div>
+  </div>
+
+  <h2>4. Sticky</h2>
+  <div class="box sticky-box">Sticky Header</div>
+
+  <div class="spacer"></div>
+
+  <div class="box fixed-box">Fixed Box</div>
+
+</body>
+</html>

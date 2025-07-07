@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch API Tasks Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    pre {
+      background-color: #fff;
+      padding: 10px;
+      border-left: 5px solid #007acc;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fetch API Tasks Output</h1>
+  <p>Open the <strong>browser console</strong> (Right-click → Inspect → Console tab) to see the logs for each task.</p>
+
+  <script>
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(response => response.json())
+      .then(posts => {
+        console.log("🔹 Task 1: Titles of the first 5 posts:");
+        posts.slice(0, 5).forEach(post => console.log(`- ${post.title}`));
+      });
+ 
+    const newPost = {
+      title: "My New Post",
+      body: "This is the body of my new post."
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newPost)
+    })
+      .then(response => {
+        console.log("🔹 Task 2: POST response status:", response.status);
+        return response.json();
+      })
+      .then(data => console.log("POST response data:", data));
+ 
+    const updatedPost = {
+      title: "Updated Title",
+      body: "Updated post body content."
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedPost)
+    })
+      .then(response => {
+        console.log("🔹 Task 3: PUT response status:", response.status);
+        return response.json();
+      })
+      .then(data => console.log("Updated Post:", data));
+ 
+    fetch("https://jsonplaceholder.typicode.com/posts/1", {
+      method: "DELETE"
+    })
+      .then(response => {
+        console.log("🔹 Task 4: DELETE status:", response.status);
+        if (response.status === 200 || response.status === 204) {
+          console.log("Post deleted successfully.");
+        } else {
+          console.log("Failed to delete post.");
+        }
+      });
+ 
+    const sampleObj = {
+      name: "Poojith",
+      age: 23,
+      skills: ["JS", "HTML", "CSS"]
+    };
+
+    const jsonString = JSON.stringify(sampleObj);
+    const parsedObj = JSON.parse(jsonString);
+
+    console.log("🔹 Task 5:");
+    console.log("Original Object:", sampleObj);
+    console.log("JSON String:", jsonString);
+    console.log("Parsed Object:", parsedObj);
+
+    // HTTP Status Code Reference
+    console.log("HTTP Status Codes Reference:");
+    console.log("200 OK: Request succeeded (category: 2xx)");
+    console.log("201 Created: Resource created successfully (category: 2xx)");
+    console.log("204 No Content: Successful with no body (category: 2xx)");
+    console.log("400 Bad Request: Client error - malformed request (category: 4xx)");
+    console.log("404 Not Found: Resource does not exist (category: 4xx)");
+    console.log("401 Unauthorized: Authentication required (category: 4xx)");
+    console.log("403 Forbidden: Authenticated but not allowed (category: 4xx)");
+    console.log("500 Internal Server Error: Server-side issue (category: 5xx)");
+    console.log("502 Bad Gateway: Server received an invalid response (category: 5xx)");
+    console.log("503 Service Unavailable:Server is overloaded or down (category: 5xx)");
+  </script>
+
+</body>
+</html>
